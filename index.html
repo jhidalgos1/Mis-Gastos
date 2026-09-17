@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Mi Dinero" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Mi Dinero</title>
+</head>
+<body>
+  <div id="appShell" class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">CONTROL PERSONAL</div>
+        <h1 id="appTitle">Mi Dinero</h1>
+      </div>
+      <button class="icon-btn" id="themeBtn" aria-label="Cambiar tema" title="Cambiar tema">◐</button>
+    </header>
+
+    <div class="period-bar">
+      <button class="icon-btn" id="prevPeriodBtn" aria-label="Periodo anterior">‹</button>
+      <button class="period-select" id="periodBtn">
+        <span id="periodLabel">Periodo</span>
+        <small id="periodRange">—</small>
+      </button>
+      <button class="icon-btn" id="nextPeriodBtn" aria-label="Periodo siguiente">›</button>
+    </div>
+
+    <main id="view" class="view" aria-live="polite"></main>
+
+    <nav class="bottom-nav" aria-label="Navegación principal">
+      <button data-route="dashboard" class="nav-item active"><span>⌂</span><small>Inicio</small></button>
+      <button data-route="payments" class="nav-item"><span>✓</span><small>Pagos</small></button>
+      <button data-route="loans" class="nav-item"><span>↔</span><small>Préstamos</small></button>
+      <button data-route="movements" class="nav-item"><span>≡</span><small>Movimientos</small></button>
+      <button data-route="more" class="nav-item"><span>•••</span><small>Más</small></button>
+    </nav>
+  </div>
+
+  <dialog id="dialog" class="modal">
+    <form method="dialog" id="dialogForm" class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" id="dialogEyebrow"></div>
+          <h2 id="dialogTitle">Formulario</h2>
+        </div>
+        <button type="button" class="icon-btn" aria-label="Cerrar" onclick="appModal.close()">×</button>
+      </div>
+      <div id="dialogBody" class="modal-body"></div>
+      <div id="dialogActions" class="modal-actions"></div>
+    </form>
+  </dialog>
+
+  <input type="file" id="restoreInput" accept="application/json,.json" hidden />
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

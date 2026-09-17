@@ -1,0 +1,11 @@
+{
+  "name": "Mi Dinero",
+  "short_name": "Mi Dinero",
+  "description": "Control personal de ingresos, gastos y préstamos",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#111827",
+  "lang": "es-PE"
+}
